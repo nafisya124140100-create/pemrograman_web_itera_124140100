@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum JavaScript Next Gen</title>
+  <link rel="stylesheet" href="latihan4.css">
+</head>
+<body>
+
+  <!-- Dark Mode Toggle -->
+  <button id="btnDarkMode">Toggle Dark Mode 🌙</button>
+
+  <!-- 1 & 2. Form Mahasiswa + Validasi + LocalStorage -->
+  <div class="card">
+    <h2>1. Data Mahasiswa (localStorage & Validasi)</h2>
+    <form id="formMhs" novalidate>
+      <div>
+        <input type="text" id="nim" placeholder="NIM (minimal 8 angka)">
+        <span id="errNim" class="error-text"></span>
+      </div>
+      <div>
+        <input type="text" id="nama" placeholder="Nama Lengkap">
+        <span id="errNama" class="error-text"></span>
+      </div>
+      <div>
+        <input type="number" id="nilai" placeholder="Nilai (0 - 100)">
+        <span id="errNilai" class="error-text"></span>
+      </div>
+      <button type="submit">Tambah Mahasiswa</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr><th>NIM</th><th>Nama</th><th>Nilai</th><th>Aksi</th></tr>
+      </thead>
+      <tbody id="tabelMhs"></tbody>
+    </table>
+  </div>
+
+  <!-- 3 & 5. API Posts + Search + Pagination -->
+  <div class="card">
+    <h2>2. API Posts (Search & Pagination)</h2>
+    <input type="text" id="searchPost" placeholder="Cari judul post...">
+    <div id="postsContainer"></div>
+    <div style="margin-top: 10px;">
+      <button id="btnPrev">Previous</button>
+      <span id="pageInfo">Halaman 1</span>
+      <button id="btnNext">Next</button>
+    </div>
+  </div>
+
+  <!-- 6. Todo List + LocalStorage -->
+  <div class="card">
+    <h2>3. Aplikasi Todo List</h2>
+    <input type="text" id="todoInput" placeholder="Tambah tugas baru...">
+    <button id="btnAddTodo">Tambah</button>
+    <ul id="todoList"></ul>
+  </div>
+
+  <script src="latihan4.js"></script>
+</body>
+</html>
