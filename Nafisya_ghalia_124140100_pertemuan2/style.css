@@ -1,0 +1,226 @@
+:root {
+   --color-primary: #64748b;
+    --color-primary-hover: #475569;
+    --color-success: #39816c;
+    --color-danger: #ef4444;
+    --color-danger-hover: #dc2626;
+    --color-warning: #f59e0b;
+
+    --color-text-main: #2a2425;
+    --color-text-muted: #64748b;
+    --color-text-disabled: #94a3b8;
+
+    --bg-body: #e9ebeb;
+    --bg-card: #fffcf2;
+    --bg-input: #fafafa;
+    --border-color: #e2e8f0;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+
+    --transition: all 0.2s ease-in-out;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--color-text-main);
+    padding: 40px 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 32px;
+    transition: var(--transition);
+}
+
+.container:hover { box-shadow: var(--shadow-hover); }
+
+.page-title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 32px;
+    font-size: 1.75rem;
+    letter-spacing: -0.5px;
+}
+
+.add-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.text-input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+    background-color: var(--bg-input);
+}
+
+.text-input:focus {
+    border-color: var(--color-primary);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.17);
+}
+
+.btn {
+    padding: 14px 24px;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.btn:active { transform: translateY(0); }
+
+.btn-primary { background-color: var(--color-primary); color: #fff; }
+.btn-primary:hover { background-color: var(--color-primary-hover); transform: translateY(-1px); }
+
+.btn-secondary {
+    display: block;
+    margin: 32px auto 0;
+    padding: 12px 24px;
+    background-color: var(--color-text-muted);
+    color: #fff;
+    font-size: 0.9rem;
+}
+.btn-secondary:hover { background-color: #475569; }
+
+.task-list { list-style: none; }
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+    border-radius: var(--radius-sm);
+}
+
+.task-item:hover { background-color: #f8f8df; }
+.task-item:last-child { border-bottom: none; }
+
+.task-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-right: 12px;
+}
+
+.task-title {
+    font-size: 1rem;
+    word-break: break-word;
+    transition: var(--transition);
+}
+
+.task-item.completed .task-title {
+    text-decoration: line-through;
+    color: var(--color-text-disabled);
+}
+
+.checkbox-custom {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--color-success);
+}
+
+/* =========================================
+   TOMBOL AKSI (Edit / Hapus)
+   ========================================= */
+.action-group { display: flex; gap: 8px; flex-shrink: 0; }
+
+.btn-action {
+    padding: 8px 12px;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: var(--transition);
+    background-color: transparent;
+}
+
+.btn-edit { color: var(--color-primary-light); }
+.btn-edit:hover { background-color: #d6dae1; }
+
+.btn-delete { color: var(--color-danger); }
+.btn-delete:hover { background-color: #ffcbc4; }
+
+/* =========================================
+   STATE: Kosong, Loading, Editing
+   ========================================= */
+.status-empty {
+    text-align: center;
+    color: var(--color-text-muted);
+    padding: 40px 0;
+    font-style: italic;
+}
+
+.status-loading {
+    text-align: center;
+    color: var(--color-text-muted);
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-error {
+    color: var(--color-danger);
+    text-align: center;
+    padding: 16px;
+    background-color: #fef2f2;
+    border-radius: var(--radius-sm);
+    margin-bottom: 16px;
+    border: 1px solid #fecaca;
+}
+
+/* Mode edit inline */
+.task-item.editing {
+    background-color: #fff5df;
+    border: 1px solid var(--color-warning);
+}
+
+.edit-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 2px solid var(--color-warning);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Animasi spinner */
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}

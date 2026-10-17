@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dasbor Pribadi - Pengelola Tugas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="page-title">📋 Dasbor Tugas</h1>
+        </header>
+
+        <form class="add-form" id="formTambah">
+            <input type="text" id="inputTugas" class="text-input" placeholder="Apa yang perlu dikerjakan hari ini?" autocomplete="off" required />
+            <button type="submit" id="btnTambah" class="btn btn-primary">Tambah</button>
+        </form>
+
+        <ul class="task-list" id="daftarTugas">
+            <li class="status-loading">
+                <div class="spinner"></div>
+                <span>Sedang memuat tugas...</span>
+            </li>
+        </ul>
+
+        <button id="btnReset" class="btn btn-secondary">🔄 Muat Ulang Data Awal</button>
+    </div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
