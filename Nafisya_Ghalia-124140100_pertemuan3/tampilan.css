@@ -1,0 +1,131 @@
+body {
+    font-family: Tahoma, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1.judul {
+    text-align: center;
+    color: #1a5276;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.perbandingan {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.box {
+    background-color: #ffffff;
+    border: 2px solid #7e6bce;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box h2 {
+    margin-top: 0;
+    color: #1a5276;
+    font-size: 20px;
+}
+
+.contoh-query {
+    overflow-wrap: anywhere;
+    padding: 12px;
+    background-color: #f0f4f8;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #1a5276;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus {
+    border-color: #7e6bce;
+    outline: none;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #1ba8ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #bbbbbb;
+}
+
+/* Tabel Styling */
+.tabel-detail {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.tabel-detail th,
+.tabel-detail td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.tabel-detail th {
+    background-color: #033796af;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.tabel-detail tbody tr:nth-child(even) {
+    background-color: #daf0fd84;
+}
+
+.tabel-detail tbody tr:hover {
+    background-color: #f1ffbb72;
+}
+
+@media (max-width: 700px) {
+    .perbandingan {
+        grid-template-columns: 1fr;
+    }
+}
