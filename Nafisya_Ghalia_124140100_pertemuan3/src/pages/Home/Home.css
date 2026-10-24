@@ -1,0 +1,22 @@
+.home__feedback {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--color-success-soft);
+  color: #496348;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.home__layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.home__content { min-width: 0; }
+
+@media (max-width: 820px) {
+  .home__layout { grid-template-columns: 1fr; }
+}
