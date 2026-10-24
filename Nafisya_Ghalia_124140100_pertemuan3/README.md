@@ -47,17 +47,17 @@ npm test
 
 ## Tangkapan Layar (Screenshot)
 1. **Tampilan Utama (Form & Daftar Buku)**  
-   ![Tampilan Halaman Utama](<img width="1277" height="662" alt="image" src="https://github.com/user-attachments/assets/fa5166f9-5daa-47d1-aa98-69d8923d8c1e" />)
+   ![Tampilan Halaman Utama]<img width="1277" height="662" alt="image" src="https://github.com/user-attachments/assets/fa5166f9-5daa-47d1-aa98-69d8923d8c1e" />
 
 2. **Tampilan Statistik Buku**  
-   ![Tampilan Statistik](<img width="897" height="702" alt="image" src="https://github.com/user-attachments/assets/143de6fd-5e00-4fea-aa13-2d141633ea43" />
-)
+   ![Tampilan Statistik]<img width="897" height="702" alt="image" src="https://github.com/user-attachments/assets/143de6fd-5e00-4fea-aa13-2d141633ea43" />
+
 
 3. **Tampilan Validasi Error**  
-   ![Tampilan Validasi Error](<img width="902" height="672" alt="image" src="https://github.com/user-attachments/assets/235b1e7f-9cad-4891-94f2-935d08855e9e" />)
+   ![Tampilan Validasi Error]<img width="902" height="672" alt="image" src="https://github.com/user-attachments/assets/235b1e7f-9cad-4891-94f2-935d08855e9e" />
 
 4. **Hasil Unit Testing (Vitest & RTL)**  
-   ![Hasil Test](<img width="793" height="426" alt="image" src="https://github.com/user-attachments/assets/f8de891c-3d6f-44fd-aea9-6956fcbbb9fc" />)
+   ![Hasil Test]<img width="793" height="426" alt="image" src="https://github.com/user-attachments/assets/f8de891c-3d6f-44fd-aea9-6956fcbbb9fc" />
 
 ---
 
