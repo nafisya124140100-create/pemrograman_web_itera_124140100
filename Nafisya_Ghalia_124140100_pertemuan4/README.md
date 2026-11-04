@@ -48,16 +48,10 @@ Implementasi konsep **modularisasi** dengan memisahkan fungsi ke dalam modul ter
    - `import math_operations` (akses via prefix)
    - `from math_operations import ...` (akses langsung)
 3. Menampilkan hasil kalkulasi dalam format terstruktur.
+
+   
    <img width="546" height="652" alt="Screenshot 2026-11-04 212709" src="https://github.com/user-attachments/assets/2d17fa4d-af2a-45be-9ef5-51e1f903c3b8" />
 
 
 ---
 
-## 📂 Struktur Folder
-Nafisya_Ghalia_124140100_pertemuan4/
-├── .gitignore
-├── README.md
-├── tugas1_bmi.py
-├── tugas2_nilai_mahasiswa.py
-├── math_operations.py
-└── main.py
