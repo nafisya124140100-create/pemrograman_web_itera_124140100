@@ -1,0 +1,80 @@
+:root {
+  --color-bg: #f6f4ee;
+  --color-surface: #fffefa;
+  --color-primary: #657a67;
+  --color-primary-dark: #506352;
+  --color-primary-soft: #e8ede5;
+  --color-text: #393a32;
+  --color-muted: #74756b;
+  --color-border: #e5e1d7;
+  --color-danger: #a95750;
+  --color-danger-soft: #f8eae7;
+  --color-success: #5c795c;
+  --color-success-soft: #e8efe4;
+  --color-warning: #9a7444;
+  --color-progress-track: #ece9e0;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(66, 61, 48, 0.07);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1, h2, h3 { margin: 0 0 8px; }
+p { margin: 0; }
+
+input, select, button { font-family: inherit; font-size: 1rem; }
+
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(101, 122, 103, 0.16);
+}
+
+.btn {
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.btn--primary { background: var(--color-primary); color: #fff; }
+.btn--primary:hover { background: var(--color-primary-dark); }
+
+.btn--ghost { background: #fff; color: var(--color-text); border-color: var(--color-border); }
+.btn--ghost:hover { background: #f1f5f9; }
+
+.btn--danger { background: var(--color-danger); color: #fff; }
+.btn--danger:hover { background: #914840; }
+
+.btn--danger-outline { background: var(--color-surface); color: var(--color-danger); border-color: #e8c9c3; }
+.btn--danger-outline:hover { background: var(--color-danger-soft); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge--milik { background: var(--color-success-soft); color: #496348; }
+.badge--baca  { background: var(--color-primary-soft); color: #4f624f; }
+.badge--beli  { background: #f5eddb; color: #80613a; }

@@ -1,0 +1,25 @@
+.book-form {
+  background: var(--color-surface);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.book-form__title { font-size: 1.1rem; }
+
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-field label { font-size: 0.875rem; font-weight: 600; }
+.required { color: var(--color-danger); }
+
+.form-field--error input,
+.form-field--error select {
+  border-color: var(--color-danger);
+  background: var(--color-danger-soft);
+}
+
+.form-error { color: var(--color-danger); font-size: 0.8rem; }
+
+.book-form__actions { display: flex; gap: 8px; }

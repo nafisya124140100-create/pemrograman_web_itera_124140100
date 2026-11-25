@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kasir Kantin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+
+</head>
+<body>
+<div class="app">
+
+  <header class="top">
+    <div>
+      <h1>Kasir Kantin</h1>
+      <p class="sub">Catat pesanan, hitung total otomatis, dan simpan keranjang. Data tetap ada walau halaman ditutup.</p>
+    </div>
+    <div class="top-right">
+      <div class="stat"><small>Omzet hari ini</small><b id="omzet">Rp0</b></div>
+      <div class="stat"><small>Transaksi</small><b id="trxCount">0</b></div>
+    </div>
+  </header>
+
+  <div class="grid">
+    <!-- KIRI: input barang -->
+    <main>
+      <section class="panel" aria-labelledby="h-input">
+        <h2 id="h-input">Tambah barang</h2>
+
+        <form id="itemForm" novalidate>
+          <div class="fields">
+            <div class="field wide">
+              <label for="nama">Nama barang</label>
+              <input type="text" id="nama" name="nama" autocomplete="off" maxlength="60" aria-describedby="err-nama">
+              <p class="err" id="err-nama" aria-live="polite"></p>
+            </div>
+            <div class="field" style="grid-column: span 1;">
+              <label for="harga">Harga satuan (Rp)</label>
+              <input type="text" id="harga" name="harga" inputmode="numeric" autocomplete="off" aria-describedby="err-harga">
+              <p class="err" id="err-harga" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="qty">Jumlah</label>
+              <input type="text" id="qty" name="qty" inputmode="numeric" autocomplete="off" value="1" aria-describedby="err-qty">
+              <p class="err" id="err-qty" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn">Tambah ke keranjang</button>
+            <button type="button" class="btn ghost" id="resetForm">Bersihkan isian</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="h-riwayat">
+        <div class="row" style="align-items:center; margin-bottom:14px;">
+          <h2 id="h-riwayat" style="margin:0;">Riwayat transaksi</h2>
+          <button class="btn danger small" id="clearHistory" type="button">Hapus riwayat</button>
+        </div>
+        <ul class="history" id="history"></ul>
+      </section>
+    </main>
+
+    <!-- KANAN: keranjang + kalkulator -->
+    <aside>
+      <section class="panel" aria-labelledby="h-cart">
+        <h2 id="h-cart">Keranjang belanja</h2>
+        <div class="receipt">
+          <div class="receipt-head">
+            <strong>KANTIN KAMPUS</strong>
+            <span id="nowText"></span>
+          </div>
+
+          <ul class="cart" id="cart" aria-live="polite"></ul>
+
+          <div class="calc">
+            <div class="row"><span>Subtotal (<span id="itemCount">0</span> barang)</span><span id="subtotal">Rp0</span></div>
+
+            <div class="row">
+              <span>Diskon <small id="diskonLabel" style="color:var(--muted)">(diskon 10% jika subtotal &gt; 50rb)</small></span>
+              <span id="diskonRp" style="font-family:var(--f-mono)">−Rp0</span>
+            </div>
+
+            <div class="total"><span>TOTAL</span><span id="total">Rp0</span></div>
+          </div>
+
+          <div class="pay">
+            <label for="cash" style="margin:0;">Uang diterima (Rp)</label>
+            <input type="text" id="cash" inputmode="numeric" autocomplete="off" aria-describedby="err-cash">
+            <div class="cash-quick" id="cashQuick"></div>
+            <p class="err" id="err-cash" style="margin:0;"></p>
+            <div class="row"><span>Kembalian</span><span class="change" id="change">Rp0</span></div>
+          </div>
+        </div>
+
+        <div class="cart-actions">
+          <button class="btn danger" id="clearCart" type="button">Kosongkan</button>
+          <button class="btn pay-btn" id="payBtn" type="button" disabled>Bayar</button>
+        </div>
+      </section>
+    </aside>
+  </div>
+</div>
+
+<!-- Modal struk -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="rc-title">
+  <div class="modal" id="modal">
+    <h3 id="rc-title">Pembayaran berhasil</h3>
+    <p class="meta" id="rc-meta"></p>
+    <div class="lines" id="rc-lines"></div>
+    <div class="sum" id="rc-sum"></div>
+    <p class="thanks">Terima kasih, selamat menikmati!</p>
+    <button class="btn" id="rc-close" type="button" style="width:100%;">Transaksi baru</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>

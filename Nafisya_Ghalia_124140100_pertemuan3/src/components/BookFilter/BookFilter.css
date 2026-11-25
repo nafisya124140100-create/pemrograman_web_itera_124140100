@@ -1,0 +1,27 @@
+/* src/components/BookFilter/BookFilter.css */
+.book-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.book-filter__search { flex: 1 1 260px; display: flex; flex-direction: column; gap: 6px; }
+.book-filter__search label { font-size: 0.875rem; font-weight: 600; }
+
+.book-filter__status { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.chip {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chip:hover { background: var(--color-primary-soft); }
+.chip--active { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
