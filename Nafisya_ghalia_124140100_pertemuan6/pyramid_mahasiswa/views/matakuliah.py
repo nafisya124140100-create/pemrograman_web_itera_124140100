@@ -14,7 +14,7 @@ def get_all_matakuliah(request):
 # 2. GET /api/matakuliah/{id} (Ambil detail 1 data)
 @view_config(route_name='matakuliah_detail', request_method='GET', renderer='json')
 def get_matakuliah(request):
-    mk_id = request.matchdict['id']
+    mk_id = int(request.matchdict['id'])
     mk = request.dbsession.query(Matakuliah).filter_by(id=mk_id).first()
     
     if not mk:
@@ -56,7 +56,7 @@ def create_matakuliah(request):
 # 4. PUT /api/matakuliah/{id} (Update data)
 @view_config(route_name='matakuliah_detail', request_method='PUT', renderer='json')
 def update_matakuliah(request):
-    mk_id = request.matchdict['id']
+    mk_id = int(request.matchdict['id'])
     mk = request.dbsession.query(Matakuliah).filter_by(id=mk_id).first()
     
     if not mk:
@@ -76,7 +76,7 @@ def update_matakuliah(request):
 # 5. DELETE /api/matakuliah/{id} (Hapus data)
 @view_config(route_name='matakuliah_detail', request_method='DELETE', renderer='json')
 def delete_matakuliah(request):
-    mk_id = request.matchdict['id']
+    mk_id = int(request.matchdict['id'])
     mk = request.dbsession.query(Matakuliah).filter_by(id=mk_id).first()
     
     if not mk:
